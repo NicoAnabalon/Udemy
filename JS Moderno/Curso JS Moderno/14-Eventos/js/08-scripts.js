@@ -8,11 +8,15 @@ parrafo1.classList.add('concierto');
 const parrafo2 = document.createElement('P');
 parrafo2.textContent = 'Concierto de Rock';
 parrafo2.classList.add('titulo');
+parrafo2.onclick = function() {
+    nuevaFuncionId(1);
+}
 
 // 3er parrafo...
 const parrafo3 = document.createElement('p');
 parrafo3.textContent = '$800 por persona';
 parrafo3.classList.add('precio');
+parrafo3.onclick = nuevaFuncion;
 
 // crear el div...
 const info = document.createElement('div');
@@ -38,3 +42,11 @@ contenedorCard.appendChild(info);
 // Insertarlo en el HTML...
 const contenedor = document.querySelector('.hacer .contenedor-cards');
 contenedor.appendChild(contenedorCard); // al inicio info
+
+function nuevaFuncion() {
+    console.log("Desde nueva función");
+}
+
+function nuevaFuncionId(id) {
+    console.log(`Desde función id: ${id}`);
+}
