@@ -62,6 +62,7 @@ function crearCliente() {
         email: "nicolas.anabalon.a@gmail.com"
     };
 
+    // Para agregar: add, para actualizar: putt, para eliminar: delete
     const peticion = objectStore.add(nuevoCliente);
 
     console.log(peticion);
