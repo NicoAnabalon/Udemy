@@ -36,6 +36,8 @@ function consultarCriptomonedas() {
 }
 // llena el select 
 function selectCriptomonedas(criptomonedas) {
+    // Valor de inicio para conocer el tiempo de ejecución
+    const inicio = performance.now();
 
     criptomonedas.forEach( cripto => {
         const { FullName, Name } = cripto.CoinInfo;
@@ -46,6 +48,10 @@ function selectCriptomonedas(criptomonedas) {
         criptomonedasSelect.appendChild(option);
     });
 
+    // Valor de fin para conocer el tiempo de ejecución
+    const fin = performance.now();
+    // Tiempo de ejecución
+    console.log(fin - inicio);
 }
 
 
@@ -110,7 +116,6 @@ function mostrarCotizacionHTML(cotizacion) {
     console.log(cotizacion);
     const  { PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, LASTUPDATE } = cotizacion;
 
-
     debugger;
 
     const precio = document.createElement('p');
@@ -128,8 +133,6 @@ function mostrarCotizacionHTML(cotizacion) {
 
     const ultimaActualizacion = document.createElement('p');
     ultimaActualizacion.innerHTML = `<p>Última Actualización: <span>${LASTUPDATE}</span></p>`;
-
-    debugger;
 
     resultado.appendChild(precio);
     resultado.appendChild(precioAlto);
